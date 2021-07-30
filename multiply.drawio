@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2021-07-30T15:11:02.266Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" version="14.9.3" etag="veXmOaCn6VyQ0kPEst9E" type="github"><diagram id="dWq_XU6mms-PHMZWRTFN">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-07-30T15:22:35.082Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36" etag="u0BZTo8De-GmQYLCzAZB" version="14.9.3" type="github">
+  <diagram id="dWq_XU6mms-PHMZWRTFN" name="Page-1">
+    <mxGraphModel dx="578" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-15" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IaKn8-Nx0URlANp2_W2U-6" target="IaKn8-Nx0URlANp2_W2U-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-6" value="Вывод c" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="278.75" y="380" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-12" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IaKn8-Nx0URlANp2_W2U-7" target="IaKn8-Nx0URlANp2_W2U-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-7" value="Ввод a, b" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=13;arcSize=11;" vertex="1" parent="1">
+          <mxGeometry x="281.25" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-14" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IaKn8-Nx0URlANp2_W2U-8" target="IaKn8-Nx0URlANp2_W2U-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-8" value="c = a * b" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="281.25" y="300" width="117.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-11" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IaKn8-Nx0URlANp2_W2U-9" target="IaKn8-Nx0URlANp2_W2U-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-9" value="Начало" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="281.25" y="150" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IaKn8-Nx0URlANp2_W2U-10" value="Конец" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="275" y="460" width="127.5" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
