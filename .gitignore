@@ -1,7 +1,15 @@
 [Dd]ebug/
+
 [Rr]elease/
+
 bin/
+
 obj/
+
 *.exe
+
 *.cbp
+
 *.depend
+
+*.layout
