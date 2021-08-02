@@ -15,6 +15,8 @@
 unsigned conv(unsigned orig, unsigned base, char * res, unsigned i);
 // interface: a power b
 double power(double a, signed b);
+// interface: a power b
+double power_dummy(double a, signed b);
 // init random matrix 0 and 1
 void init01(unsigned n, unsigned m, int* arr);
 // print matrix
@@ -45,7 +47,7 @@ unsigned conv(unsigned orig, unsigned base, char * res, unsigned i) {
   return len;
 }
 
-// power implementation for signed b
+// power implementation for signed b with using binary divison
 double power(double a, int b) {
   if (b == 0) return 1;
 
@@ -56,6 +58,16 @@ double power(double a, int b) {
 
   double c = power(a, ABS(b) / 2);
   return b > 0 ? c * c : 1 / c / c;
+}
+
+// power implementation for signed b with using recursion
+double power_dummy(double a, signed b) {
+  if (b == 0) return 1;
+
+  if (b < 0)
+    return 1 / power_dummy(a, ABS(b));
+
+  return a * power_dummy(a, b - 1);
 }
 
 void init01(unsigned n, unsigned m, int* arr) {
