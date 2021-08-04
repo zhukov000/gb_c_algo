@@ -8,15 +8,6 @@
 
 int main() {
 
-  helloWorld(); // lesson 2
-
-  // lesson 3
-  printf("\n");
-  for (unsigned p = 0; p < 100; ++p) {
-    printf("%2u - %c", p, isPrime(p) ? 'P' : ' ');
-    printf(p % 10 == 9 ? "\n" : " ");
-  }
-
   // lesson 4
   printf("\n");
   unsigned n = 123;
@@ -27,7 +18,7 @@ int main() {
   }
   printf("\n");
   for(int i=-5; i<=5; ++i) {
-    printf("2^%d = %.3lf\n", i, power(2., i));
+    printf("2^%d = %5.3lf\n", i, power(2., i));
   }
   printf("\n");
 
