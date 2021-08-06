@@ -31,15 +31,42 @@ void qsL(int * arr, int left, int right)
 {
 	if (left + 1 < right)
 	{
-		int pi = qpart(arr, left, right);
+		int pi = qpL(arr, left, right);
 		qsL(arr, left, pi);
 		qsL(arr, pi + 1, right);
 	}
 }
 
-// qsort Hoare
-void qs() {
+void qsortL(int * arr, unsigned size) {
+  qsL(arr, 0, size);
+}
 
+// qsort Hoare subarr: arr[left:right]
+void qsH(int * arr, int left, int right) {
+  int i = left;
+  int j = right;
+  int x = arr[(left + right) / 2];
+
+  // qsort partition Hoare
+  do {
+    while (arr[i] < x) ++i;
+    while (arr[j] > x) --j;
+
+    if (i <= j) {
+      swap(arr[i], arr[j]);
+      i++;
+      j--;
+    }
+  } while (i <= j);
+
+  if (j > left)
+    qsH(arr, left, j);
+  if (i < right)
+    qsH(arr, i, right);
+}
+
+void qsortH(int * arr, unsigned size) {
+  qsH(arr, 0, (int)size-1);
 }
 
 // block sort
