@@ -28,6 +28,37 @@ void convertToBin(int x) {
   printf("\n");
 }
 
+void checkThinHeapPQ() {
+  srand(SEED);
+
+  printf("priority queue based on thin heap:\n\n");
+  ThinHeap * heap = makeTHeap();
+
+  for(unsigned i=0; i<2*PQ_CHECK_CNT; ++i) {
+    if (heap->first == 0 || rand() % 2) {
+      THNode* node = makeTHNode(rand() % 100, rand() % 100);
+      printf("+ insert value=%2d priority=%2d\n", node->value, node->priority);
+      insertTHeap(heap, node);
+    } else {
+      THNode* node = extractMinTHeap(heap);
+      printf("- extract value=%2d priority=%2d\n", node->value, node->priority);
+    }
+
+    // DEBUG_PRINT_HEAP(heap);
+
+  }
+
+  // DEBUG_PRINT_HEAP(heap);
+
+  THNode * node = extractMinTHeap(heap);
+  while (node != 0) {
+    printf("- extract value=%2d priority=%2d\n", node->value, node->priority);
+    node = extractMinTHeap(heap);
+  }
+
+  // freeTHeap(heap);
+}
+
 void checkHeapPQ() {
   srand(SEED);
 

@@ -7,5 +7,5 @@ int main() {
 
   checkNaivePQ();
   checkHeapPQ();
-
+  checkThinHeapPQ();
 }
