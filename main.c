@@ -5,7 +5,7 @@ int main() {
   convertToBin(123);
   convertToBin(17);
 
-  // checkNaivePQ();
-  // checkHeapPQ();
+  checkNaivePQ();
+  checkHeapPQ();
   checkThinHeapPQ();
 }
