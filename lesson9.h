@@ -9,7 +9,10 @@
 #include"thin_heap_priority_queue.h"
 
 #define SEED 1234
-#define PQ_CHECK_CNT 5
+#define PQ_CHECK_CNT 10
+
+// show tree struct after change
+#define DEBUG_THIN_HEAP
 
 void convertToBin(int x) {
   assert(x > 0 && "Can convert only positive number");
@@ -43,12 +46,10 @@ void checkThinHeapPQ() {
       THNode* node = extractMinTHeap(heap);
       printf("- extract value=%2d priority=%2d\n", node->value, node->priority);
     }
-
-    // DEBUG_PRINT_HEAP(heap);
-
+#ifdef DEBUG_THIN_HEAP
+    DEBUG_PRINT_HEAP(heap);
+#endif // DEBUG_THIN_HEAP
   }
-
-  // DEBUG_PRINT_HEAP(heap);
 
   THNode * node = extractMinTHeap(heap);
   while (node != 0) {
@@ -56,7 +57,7 @@ void checkThinHeapPQ() {
     node = extractMinTHeap(heap);
   }
 
-  // freeTHeap(heap);
+  freeTHeap(heap);
 }
 
 void checkHeapPQ() {

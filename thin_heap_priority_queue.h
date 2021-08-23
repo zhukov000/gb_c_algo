@@ -48,6 +48,7 @@ THNode * makeTHNode(int value, int priority) {
 }
 
 int isThin(THNode* node) {
+  if (node->rank == 0) return 0;
   if (node->rank == 1) {
     return node->child == 0;
   } else {
@@ -120,15 +121,16 @@ THNode* extractMinTHeap(ThinHeap * heap) {
   }
   int max = -1;
   x = heap->first;
-  THNode * next = 0;
   while (x != 0) {
+    THNode * next = x->right;
     while(aux[x->rank] != 0) {
-      next = x->right;
       if (aux[x->rank]->priority < x->priority) {
         swap(THNode*, aux[x->rank], x);
       }
       aux[x->rank]->right = x->child;
-      ((THNode*)x->child)->left = aux[x->rank];
+      if (x->child) {
+        ((THNode*)x->child)->left = aux[x->rank];
+      }
       aux[x->rank]->left = x;
       x->child = aux[x->rank];
       aux[x->rank] = 0;
@@ -141,7 +143,9 @@ THNode* extractMinTHeap(ThinHeap * heap) {
   free(heap);
   heap = makeTHeap();
   for(int i=0; i<=max; ++i) {
-     insertTHeap(heap, aux[i]);
+    if (!aux[i]) continue;
+    aux[i]->left = aux[i]->right = 0;
+    insertTHeap(heap, aux[i]);
   }
   tmp->child = tmp->left = tmp->right = 0;
   return tmp;
@@ -168,27 +172,32 @@ void freeTHNode(THNode * node) {
 void DEBUG_PRINT_HEAP(ThinHeap * heap) {
   if (heap == 0) return;
 
-  printf("Heap address = %d\n", heap);
-
   THNode * cur = heap->first;
   while (cur) {
     if (cur == heap->first) {
-      DEBUG_PRINT_NODE(cur, "first root");
+      DEBUG_PRINT_NODE(cur, "first root", 0);
     } else if (cur == heap->last) {
-      DEBUG_PRINT_NODE(cur, "last root");
+      DEBUG_PRINT_NODE(cur, "last root", 0);
     } else {
-      DEBUG_PRINT_NODE(cur, "root");
+      DEBUG_PRINT_NODE(cur, "root", 0);
     }
     cur = cur->right;
   }
   printf("\n");
 }
 
-void DEBUG_PRINT_NODE(THNode * node, const char * msg) {
+void DEBUG_PRINT_NODE(THNode * node, const char * msg, unsigned depth) {
   if (node == 0) return;
 
-  printf("%s={val:%d, prior:%d, rank:%d, addr:%d, right:%d}\n",
-         msg, node->value, node->priority, node->rank, node, node->right);
+  for(unsigned i=0; i<depth; ++i) {
+    printf("--");
+  }
+  printf("[%02d]:{%02d}(%02d)  %s\n", node->rank, node->priority, node->value, msg);
+  THNode * cur = node->child;
+  while(cur) {
+    DEBUG_PRINT_NODE(cur, "child", depth+1);
+    cur = cur->right;
+  }
 }
 
 
